@@ -459,8 +459,13 @@ def main(argv=None) -> int:
     return 0
 
 
-if __name__ == "__main__":
+def cli() -> None:
+    """Console-script entry point (see pyproject.toml [project.scripts])."""
     try:
         sys.exit(main())
     except KeyboardInterrupt:
         die("interrupted", 130)
+
+
+if __name__ == "__main__":
+    cli()

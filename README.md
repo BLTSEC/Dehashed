@@ -56,6 +56,19 @@ source .venv/bin/activate
 ./dehashed.py -d example.com
 ```
 
+### With pipx (installs a `dehashed` command)
+
+For a permanent, isolated `dehashed` on your `PATH`:
+
+```bash
+git clone https://github.com/BLTSEC/Dehashed && cd Dehashed
+pipx install .
+dehashed --version
+dehashed -d example.com -o loot/example.txt
+```
+
+Update after pulling changes with `pipx install --force .`.
+
 ### With pip
 
 ```bash
