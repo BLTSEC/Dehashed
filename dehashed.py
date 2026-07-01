@@ -310,7 +310,13 @@ def infer_format(path: "str | None", explicit: "str | None") -> str:
 
 
 def emit(entries: list[dict], fmt: str, path: "str | None", columns_override: "str | None") -> None:
-    fh = open(path, "w", newline="", encoding="utf-8") if path else sys.stdout
+    if path:
+        parent = os.path.dirname(path)
+        if parent:
+            os.makedirs(parent, exist_ok=True)
+        fh = open(path, "w", newline="", encoding="utf-8")
+    else:
+        fh = sys.stdout
     try:
         if fmt == "csv":
             write_csv(entries, fh)

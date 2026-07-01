@@ -44,7 +44,7 @@ caches a throwaway environment automatically:
 ```bash
 git clone https://github.com/BLTSEC/Dehashed && cd Dehashed
 uv run dehashed.py --version
-uv run dehashed.py -d example.com -o creds.txt
+uv run dehashed.py -d example.com -o loot/example.txt
 ```
 
 Prefer a persistent project venv? uv handles that too:
@@ -104,13 +104,13 @@ usage: dehashed.py [-e EMAIL] [-u USERNAME] [-d DOMAIN] [-i IP] [-n NAME]
 
 ```bash
 # Dump everything for a domain to a combolist (email:password / email:hash)
-./dehashed.py -d example.com -o example.txt
+./dehashed.py -d example.com -o loot/example.txt
 
 # Look up an email, print JSON
 ./dehashed.py -e admin@example.com --format json
 
 # Username + domain (AND), only records with a cleartext password, to CSV
-./dehashed.py -u jsmith -d example.com --only-passwords -o hits.csv
+./dehashed.py -u jsmith -d example.com --only-passwords -o loot/hits.csv
 
 # Wildcard username search (use ? for single chars; * is flaky server-side)
 ./dehashed.py -q 'username:adm?n' --wildcard
@@ -139,6 +139,9 @@ from the extension; override with `-f`.
 - Wildcard `*` searches are known to be unreliable server-side; prefer `?`.
 - This is an OSINT / authorized-security-testing tool. Use it only against data
   and targets you are permitted to investigate.
+- `-o` creates parent directories automatically. Write exports under `loot/` or
+  `output/` — both are gitignored, so real breach data never lands in version
+  control.
 
 ## License
 
