@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# Local API key / config
+config.json
+.dehashed.json
+
+# Tool output
+*_cracked.txt
+*_hashes.txt
+dehashed_*.txt
