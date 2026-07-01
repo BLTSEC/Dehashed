@@ -141,12 +141,16 @@ class Dehashed:
                 warn(f"rate limited (429), retrying in {wait}s...")
                 time.sleep(wait)
                 continue
-            if resp.status_code in (401, 403):
-                raise DehashedError(
-                    f"authentication failed ({resp.status_code}) — check your API key"
-                )
             if resp.status_code != 200:
-                raise DehashedError(f"HTTP {resp.status_code}: {resp.text.strip()[:300]}")
+                detail = ""
+                try:
+                    body = resp.json()
+                    detail = body.get("error") or body.get("message") or ""
+                except ValueError:
+                    detail = resp.text.strip()
+                if resp.status_code in (401, 403) and not detail:
+                    detail = "check your API key"
+                raise DehashedError(f"HTTP {resp.status_code}: {detail}"[:400])
             try:
                 return resp.json()
             except ValueError:
