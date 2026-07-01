@@ -9,7 +9,11 @@ venv/
 config.json
 .dehashed.json
 
-# Tool output
+# Search output / loot — NEVER commit real breach data to a public repo.
+# Write exports under loot/ or output/, e.g.  -o loot/acu.txt
+loot/
+output/
+*.loot
 *_cracked.txt
 *_hashes.txt
 dehashed_*.txt
