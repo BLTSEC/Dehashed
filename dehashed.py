@@ -55,7 +55,8 @@ SEARCH_FIELDS = [
 # Preferred left-to-right column order for the table / CSV output.
 PREFERRED_COLUMNS = [
     "email", "username", "password", "hashed_password", "hash_type",
-    "name", "phone", "ip_address", "address", "domain", "vin", "database",
+    "name", "phone", "ip_address", "address", "company", "domain", "vin",
+    "database", "database_name",
 ]
 
 _COLOR = False
