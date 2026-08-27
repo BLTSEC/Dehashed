@@ -1,5 +1,16 @@
 # dehashed.py
 
+<p align="center">
+  <img src="assets/dehashed.jpg" alt="Dehashed banner showing an authorized breach-exposure search" width="100%">
+</p>
+
+<p align="center">
+  <a href="https://bltsec.com/blog/dehashed/">Operator guide</a> ·
+  <a href="#install">Install</a> ·
+  <a href="#setup">Setup</a> ·
+  <a href="#usage">Usage</a>
+</p>
+
 A fast, single-file command-line client for the **[DeHashed](https://dehashed.com) v2 API**.
 
 Search any field, page through results automatically, and export as a table,
