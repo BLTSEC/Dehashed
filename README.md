@@ -1,7 +1,7 @@
 # dehashed.py
 
 <p align="center">
-  <img src="assets/dehashed.jpg" alt="Dehashed banner showing an authorized breach-exposure search" width="100%">
+  <img src="assets/dehashed.jpg?v=20260908" alt="Dehashed banner showing an authorized breach-exposure search" width="100%">
 </p>
 
 <p align="center">
